@@ -1,0 +1,173 @@
+---
+// src/layouts/GalleryPage.astro
+import { languages, pathFor, type Lang } from '../i18n';
+import type { Content } from '../data/types';
+import LangSwitcher from '../components/LangSwitcher.astro';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const c: Content = languages[lang].content;
+const htmlLang = languages[lang].htmlLang;
+const homeHref = pathFor(lang);
+---
+
+<!doctype html>
+<html lang={htmlLang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{c.gallery.heading} · {c.meta.title}</title>
+    <meta name="description" content={c.gallery.subtitle} />
+  </head>
+  <body>
+    <header class="page-head">
+      <div class="head-lang">
+        <LangSwitcher lang={lang} subpath="screenshots" />
+      </div>
+      <a href={homeHref} class="back">← {c.gallery.backHome}</a>
+      <h1>{c.gallery.heading}</h1>
+      <p>{c.gallery.subtitle}</p>
+    </header>
+
+    <main class="gallery-main">
+      {c.gallery.screenshots.length === 0 ? (
+        <div class="empty">
+          <svg
+            width="48"
+            height="48"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+            <circle cx="9" cy="9" r="2" />
+            <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
+          </svg>
+          <p>{c.gallery.empty}</p>
+        </div>
+      ) : (
+        <div class="shot-grid">
+          {c.gallery.screenshots.map((s) => (
+            <figure class="shot-card">
+              <img src={s.src} alt={s.title} loading="lazy" />
+              <figcaption>
+                <strong>{s.title}</strong>
+                {s.description && <span>{s.description}</span>}
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      )}
+    </main>
+  </body>
+</html>
+
+<style>
+  :root {
+    --bg: #0f1115;
+    --card: #171a21;
+    --text: #e6e6e6;
+    --muted: #9aa0a6;
+    --accent: #4f8cff;
+    --border: #262b36;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+  .page-head {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 1rem;
+  }
+  .head-lang {
+    margin-bottom: 1.5rem;
+  }
+  .back {
+    display: inline-block;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    transition: 0.2s;
+  }
+  .back:hover {
+    color: var(--accent);
+  }
+  .page-head h1 {
+    font-size: 2rem;
+    margin: 0 0 0.5rem;
+  }
+  .page-head p {
+    color: var(--muted);
+    margin: 0;
+  }
+  .gallery-main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+  .shot-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+  }
+  .shot-card {
+    margin: 0;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .shot-card img {
+    width: 100%;
+    display: block;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    background: #0b0d11;
+  }
+  .shot-card figcaption {
+    padding: 0.9rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  .shot-card figcaption strong {
+    font-size: 1rem;
+  }
+  .shot-card figcaption span {
+    color: var(--muted);
+    font-size: 0.88rem;
+  }
+  .empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 5rem 1.5rem;
+    color: var(--muted);
+    border: 1px dashed var(--border);
+    border-radius: 12px;
+    text-align: center;
+  }
+  .empty svg {
+    opacity: 0.5;
+  }
+  .empty p {
+    margin: 0;
+    font-size: 1.05rem;
+  }
+</style>

@@ -1,0 +1,14 @@
+---
+import { languages, defaultLang, type Lang } from '../../i18n';
+import HomePage from '../../layouts/HomePage.astro';
+
+export function getStaticPaths() {
+  return (Object.keys(languages) as Lang[])
+    .filter((lang) => lang !== defaultLang)
+    .map((lang) => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params as { lang: Lang };
+---
+
+<HomePage lang={lang} />

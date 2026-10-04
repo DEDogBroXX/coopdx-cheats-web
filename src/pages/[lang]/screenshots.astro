@@ -1,0 +1,14 @@
+---
+import { languages, defaultLang, type Lang } from '../../i18n';
+import GalleryPage from '../../layouts/GalleryPage.astro';
+
+export function getStaticPaths() {
+  return (Object.keys(languages) as Lang[])
+    .filter((lang) => lang !== defaultLang)
+    .map((lang) => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params as { lang: string };
+---
+
+<GalleryPage lang={lang as Lang} />

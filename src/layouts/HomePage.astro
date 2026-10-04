@@ -1,0 +1,482 @@
+---
+// src/layouts/HomePage.astro
+import { languages, defaultLang, pathFor, type Lang } from "../i18n";
+import type { Content } from "../data/types";
+import LangSwitcher from "../components/LangSwitcher.astro";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const c: Content = languages[lang].content;
+const htmlLang = languages[lang].htmlLang;
+
+const allLangs = Object.keys(languages) as Lang[];
+const otherLangs = allLangs.filter((l) => l !== lang);
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const downloadHref = (url: string) => encodeURI(`${base}${url}`);
+---
+
+<!doctype html>
+<html lang={htmlLang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{c.meta.title}</title>
+    <meta name="description" content={c.meta.description} />
+    {
+      allLangs.map((l) => (
+        <link
+          rel="alternate"
+          hreflang={languages[l].htmlLang}
+          href={pathFor(l)}
+        />
+      ))
+    }
+  </head>
+  <body>
+    <!-- Hero -->
+    <header class="hero">
+      <div class="hero-lang">
+        <LangSwitcher lang={lang} subpath="" />
+      </div>
+      <h1>{c.hero.title}</h1>
+      <p>{c.hero.subtitle}</p>
+    </header>
+
+    <!-- 脚本导航 -->
+    <nav class="script-nav">
+      {c.scripts.map((s) => <a href={`#${s.id}`}>{s.name}</a>)}
+      <a href="#howto">{c.nav.howto}</a>
+      <a href="#author">{c.nav.author}</a>
+      <a href={pathFor(lang, "screenshots")}>{c.nav.screenshots}</a>
+    </nav>
+
+    <!-- 脚本区块 -->
+    <main>
+      {
+        c.scripts.map((script) => (
+          <section class="script-section" id={script.id}>
+            <div class="script-header">
+              <div class="script-info">
+                <h2>{script.name}</h2>
+                <p>{script.description}</p>
+                <div class="script-meta">
+                  <span>
+                    {c.download.version}
+                    {script.version}
+                  </span>
+                  <span>
+                    {c.download.updated} {script.lastUpdate}
+                  </span>
+                  {script.requirement && <span>{script.requirement}</span>}
+                </div>
+              </div>
+              <a
+                href={downloadHref(script.downloadUrl)}
+                class="btn primary"
+                download
+              >
+                {c.download.btn}
+              </a>
+            </div>
+
+            {script.features && script.features.length > 0 && (
+              <div class="feature-grid">
+                {script.features.map((f) => (
+                  <div class="feature-card">
+                    {f.screenshot && (
+                      <img
+                        src={f.screenshot}
+                        alt={f.name}
+                        class="feature-shot"
+                        loading="lazy"
+                      />
+                    )}
+                    <div class="feature-body">
+                      <h4>{f.name}</h4>
+                      <p>{f.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {script.note && <p class="notice">{script.note}</p>}
+          </section>
+        ))
+      }
+    </main>
+
+    <!-- 如何使用 -->
+    <section id="howto" class="section">
+      <h2>{c.howto.heading}</h2>
+      {
+        c.howto.steps.map((step) => (
+          <>
+            <h3 class="sub-title">{step.title}</h3>
+            <ol class="steps">
+              {step.items.map((item) => (
+                <li set:html={item} />
+              ))}
+            </ol>
+          </>
+        ))
+      }
+      <p class="notice" set:html={c.howto.notice} />
+    </section>
+
+    <!-- 作者 -->
+    <section id="author" class="section">
+      <h2>{c.author.heading}</h2>
+      <div class="author-list">
+        {
+          c.authors.map((a) => (
+            <div class="author-card">
+              {a.avatar && (
+                <img src={a.avatar} alt={a.name} class="author-avatar" />
+              )}
+              <div class="author-info">
+                <h3>
+                  {a.name}
+                  {a.role && <span class="author-role">{a.role}</span>}
+                </h3>
+                <p>{a.bio}</p>
+                {a.links && a.links.length > 0 && (
+                  <div class="author-links">
+                    {a.links.map((l) => (
+                      <a
+                        href={l.url}
+                        class="btn"
+                        target="_blank"
+                        rel="noopener"
+                      >
+                        {l.label}
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section">
+      <h2>{c.faq.heading}</h2>
+      {
+        c.faq.items.map((item) => (
+          <details>
+            <summary>{item.q}</summary>
+            <p>{item.a}</p>
+          </details>
+        ))
+      }
+    </section>
+
+    <footer>
+      <p>{c.footer}</p>
+    </footer>
+  </body>
+</html>
+
+<style>
+  :root {
+    --bg: #0f1115;
+    --card: #171a21;
+    --text: #e6e6e6;
+    --muted: #9aa0a6;
+    --accent: #4f8cff;
+    --border: #262b36;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family:
+      system-ui,
+      -apple-system,
+      "Segoe UI",
+      sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 3rem 1.5rem 3rem;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .hero h1 {
+    font-size: 2.4rem;
+    margin: 0 0 1rem;
+  }
+  .hero p {
+    color: var(--muted);
+    font-size: 1.1rem;
+    margin: 0;
+  }
+
+  .hero-lang {
+    margin-bottom: 2rem;
+  }
+
+  /* 脚本导航 */
+  .script-nav {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0 1.5rem 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .script-nav a {
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.88rem;
+    transition: 0.2s;
+  }
+  .script-nav a:hover {
+    border-color: var(--accent);
+    color: var(--text);
+  }
+
+  /* 脚本区块 */
+  .script-section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem;
+    border-top: 1px solid var(--border);
+  }
+  .script-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+  }
+  .script-info h2 {
+    font-size: 1.5rem;
+    margin: 0 0 0.5rem;
+    border-left: 3px solid var(--accent);
+    padding-left: 0.75rem;
+  }
+  .script-info p {
+    color: var(--muted);
+    margin: 0 0 0.75rem;
+  }
+  .script-meta {
+    display: flex;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    color: var(--muted);
+    font-size: 0.82rem;
+  }
+
+  /* 功能网格 */
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+  }
+  .feature-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .feature-shot {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    background: #0b0d11;
+    display: block;
+  }
+  .feature-body {
+    padding: 1rem 1.25rem 1.25rem;
+  }
+  .feature-body h4 {
+    margin: 0 0 0.4rem;
+    font-size: 1.05rem;
+  }
+  .feature-body p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+
+  /* 通用区块 */
+  .section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+    border-top: 1px solid var(--border);
+  }
+  .section h2 {
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem;
+    border-left: 3px solid var(--accent);
+    padding-left: 0.75rem;
+  }
+  .sub-title {
+    font-size: 1.05rem;
+    color: var(--text);
+    margin: 1.75rem 0 0.75rem;
+    font-weight: 600;
+  }
+  .sub-title:first-of-type {
+    margin-top: 0;
+  }
+
+  /* 作者列表 */
+  .author-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.25rem;
+  }
+  .author-card {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+  }
+  .author-avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+  .author-info {
+    flex: 1;
+    min-width: 0;
+  }
+  .author-info h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.15rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  .author-role {
+    font-size: 0.72rem;
+    font-weight: 500;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    background: rgba(79, 140, 255, 0.15);
+    color: var(--accent);
+    letter-spacing: 0.02em;
+  }
+  .author-info p {
+    margin: 0 0 1rem;
+    color: var(--muted);
+    font-size: 0.92rem;
+  }
+  .author-links {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  /* 按钮 */
+  .btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: 0.2s;
+    white-space: nowrap;
+  }
+  .btn:hover {
+    border-color: var(--accent);
+  }
+  .btn.primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
+  }
+  .btn.primary:hover {
+    opacity: 0.9;
+  }
+
+  /* 步骤 */
+  .steps {
+    padding-left: 1.2rem;
+    margin: 0;
+  }
+  .steps li {
+    margin-bottom: 0.5rem;
+    color: var(--muted);
+  }
+  .steps li strong {
+    color: var(--text);
+  }
+  .notice {
+    margin-top: 1.5rem;
+    padding: 1rem 1.25rem;
+    background: rgba(79, 140, 255, 0.08);
+    border-left: 3px solid var(--accent);
+    border-radius: 6px;
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+  code {
+    background: var(--card);
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.9em;
+    border: 1px solid var(--border);
+  }
+
+  /* FAQ */
+  details {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+  }
+  summary {
+    cursor: pointer;
+    font-weight: 600;
+  }
+  details p {
+    color: var(--muted);
+    margin: 0.75rem 0 0;
+  }
+
+  /* 页脚 */
+  footer {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    color: var(--muted);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border);
+  }
+</style>

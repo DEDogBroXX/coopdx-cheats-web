@@ -1,0 +1,47 @@
+---
+// src/components/LangSwitcher.astro
+import { languages, pathFor, type Lang } from '../i18n';
+
+interface Props {
+  lang: Lang;
+  subpath?: string;
+}
+
+const { lang, subpath = '' } = Astro.props;
+const otherLangs = (Object.keys(languages) as Lang[]).filter(
+  (l) => l !== lang
+);
+---
+
+<div class="lang-switch">
+  <select onchange="location.href=this.value">
+    <option value={pathFor(lang, subpath)} selected>
+      {languages[lang].label}
+    </option>
+    {otherLangs.map((l) => (
+      <option value={pathFor(l, subpath)}>{languages[l].label}</option>
+    ))}
+  </select>
+</div>
+
+<style>
+  .lang-switch {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  .lang-switch select {
+    font-size: 0.85rem;
+    color: var(--text);
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.4rem 0.75rem;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  .lang-switch select:hover {
+    border-color: var(--accent);
+  }
+</style>
