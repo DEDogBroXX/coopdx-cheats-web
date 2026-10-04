@@ -1,3 +1,7 @@
+
+# 神秘
+开挂网页。访问 [https://degogbroxx.github.io/coopdx-cheats-web](https://degogbroxx.github.io/coopdx-cheats-web) 访问更多
+
 # Astro Starter Kit: Minimal
 
 ```sh
