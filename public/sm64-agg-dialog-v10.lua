@@ -1,6 +1,6 @@
 -- basicLua
 
-gg.setProcessInfo("超级马力欧64CoopDX")
+gg.setProcessInfo("Super Mario 64 Coop Deluxe")
 
 BSS_SHIFT = -0x160
 
@@ -28,7 +28,6 @@ LANGS = {"zh", "en", "es", "hi", "ja"}
 LIDX  = {zh=1, en=2, es=3, hi=4, ja=5}
 
 TR = {
-    
     main_title      = {"SM64辅助 主菜单", "SM64 Helper Main Menu", "Menú Principal SM64", "SM64 सहायक मुख्य मेनू", "SM64 ヘルパー メインメニュー"},
     monitor         = {"📊 监控", "📊 Monitor", "📊 Monitor", "📊 मॉनिटर", "📊 モニター"},
     custom          = {"📍 自定义修改", "📍 Custom Edit", "📍 Edición Personalizada", "📍 कस्टम संपादन", "📍 カスタム編集"},
@@ -41,22 +40,18 @@ TR = {
     face            = {"🎯 面朝方向", "🎯 Facing Direction", "🎯 Dirección", "🎯 दिशा", "🎯 向き"},
     char            = {"🎭 角色", "🎭 Character", "🎭 Personaje", "🎭 चरित्र", "🎭 キャラクター"},
     exit_script     = {"❌ 退出脚本", "❌ Exit Script", "❌ Salir", "❌ स्क्रिप्ट बंद करें", "❌ スクリプト終了"},
-
     back            = {"❌ 返回", "❌ Back", "❌ Volver", "❌ वापस", "❌ 戻る"},
     refresh         = {"🔄 刷新", "🔄 Refresh", "🔄 Actualizar", "🔄 ताज़ा करें", "🔄 更新"},
     cancel          = {"取消", "Cancel", "Cancelar", "रद्द करें", "キャンセル"},
-
     edit_char_name  = {"📝 自定义修改角色名称", "📝 Custom Edit Character Name", "📝 Editar Nombre del Personaje", "📝 चरित्र नाम संपादित करें", "📝 キャラクター名を編集"},
     edit_char_switch= {"🎭 自定义修改角色", "🎭 Custom Edit Character", "🎭 Editar Personaje", "🎭 चरित्र संपादित करें", "🎭 キャラクターを編集"},
     char_loop       = {"🔁 角色名字+角色切换 循环 0~4", "🔁 Char Name+Switch Loop 0~4", "🔁 Bucle Nombre+Cambio 0~4", "🔁 नाम+स्विच लूप 0~4", "🔁 名前+切替ループ 0~4"},
     color_random    = {"🌈 循环随机颜色", "🌈 Loop Random Colors", "🌈 Bucle Colores Aleatorios", "🌈 यादृच्छिक रंग लूप", "🌈 ランダムカラーループ"},
     color_same      = {"🎨 循环同样颜色", "🎨 Loop Same Color", "🎨 Bucle Mismo Color", "🎨 समान रंग लूप", "🎨 同じ色ループ"},
     stop_all_colors = {"⏹️ 停止所有颜色循环", "⏹️ Stop All Color Loops", "⏹️ Detener Todos los Bucles de Color", "⏹️ सभी रंग लूप रोकें", "⏹️ 全カラーループ停止"},
-
     char_loop_title = {"🔁 角色名字+切换循环", "🔁 Char Name+Switch Loop", "🔁 Bucle Nombre+Cambio", "🔁 चरित्र नाम+स्विच लूप", "🔁 キャラ名+切替ループ"},
     color_random_title = {"🌈 循环随机颜色", "🌈 Random Color Loop", "🌈 Bucle Color Aleatorio", "🌈 यादृच्छिक रंग लूप", "🌈 ランダムカラーループ"},
     color_same_title   = {"🎨 循环同样颜色", "🎨 Same Color Loop", "🎨 Bucle Mismo Color", "🎨 समान रंग लूप", "🎨 同じ色ループ"},
-
     act_start       = {"▶️ 启动循环", "▶️ Start Loop", "▶️ Iniciar Bucle", "▶️ लूप शुरू करें", "▶️ ループ開始"},
     act_stop        = {"⏹️ 停止循环", "⏹️ Stop Loop", "⏹️ Detener Bucle", "⏹️ लूप रोकें", "⏹️ ループ停止"},
     set_interval    = {"⚡ 设置间隔（当前 %dms）", "⚡ Set Interval (Current %dms)", "⚡ Establecer Intervalo (Actual %dms)", "⚡ अंतराल सेट करें (वर्तमान %dms)", "⚡ 間隔設定（現在 %dms）"},
@@ -66,7 +61,6 @@ TR = {
     running         = {"🔴运行中", "🔴 Running", "🔴 Ejecutando", "🔴 चल रहा है", "🔴 実行中"},
     stopped         = {"⚪已停止", "⚪ Stopped", "⚪ Detenido", "⚪ रुका", "⚪ 停止"},
     prompt_interval = {"设置间隔（毫秒）\n当前：%d ms", "Set interval (ms)\nCurrent: %d ms", "Intervalo (ms)\nActual: %d ms", "अंतराल (ms)\nवर्तमान: %d ms", "間隔を設定（ミリ秒）\n現在: %d ms"},
-
     ver_info        = {"SM64CoopDX辅助加强版", "SM64CoopDX Helper Enhanced", "SM64CoopDX Ayudante Mejorado", "SM64CoopDX सहायक संवर्धित", "SM64CoopDX ヘルパー強化版"},
     group_info      = {"SM64CoopDX外挂群：1064318731", "SM64CoopDX Group: 1064318731", "Grupo SM64CoopDX: 1064318731", "SM64CoopDX समूह: 1064318731", "SM64CoopDX グループ: 1064318731"},
     thanks_1        = {"灵感 & 抓静态基址 by 狗哥", "Idea & Static Base by GouGe", "Idea y Base Estática por GouGe", "विचार और स्थिर आधार गौगे द्वारा", "アイデア＆静的ベース by 狗哥"},
@@ -124,6 +118,18 @@ function readVal(addr, flag)
     if not addr then return 0 end
     local ok, v = pcall(gg.getValues, {{address = addr, flags = flag}})
     if ok and v and v[1] then return v[1].value end
+    return 0
+end
+
+function readPointer(addr)
+    if not addr then return nil end
+    local ok, v = pcall(gg.getValues, {{address = addr, flags = gg.TYPE_QWORD}})
+    if ok and v and v[1] then
+        local p = tonumber(v[1].value) or 0
+        if p ~= 0 then return p end
+    end
+    ok, v = pcall(gg.getValues, {{address = addr, flags = gg.TYPE_DWORD}})
+    if ok and v and v[1] then return tonumber(v[1].value) or 0 end
     return 0
 end
 
@@ -224,6 +230,8 @@ CHAR_NAME_OFFSET   = 0x496b1ec
 CHAR_SWITCH_OFFSET = 0x49edc58
 CHAR_NAME_LOCK     = "角色_名字"
 CHAR_SWITCH_LOCK   = "角色_切换"
+
+MARIO_STATE_OFFSET = 0x62AD0
 
 charLoopOn     = false
 charLoopIndex  = 0
@@ -770,180 +778,158 @@ function clearAllFaceLocks()
     else T("✅ 没有面朝残留") end
 end
 
+local _autoState = {
+    inited = false,
+    myX = nil, myY = nil, myZ = nil,
+    pAddr = {}, faceAddr = {},
+    charNameAddr = nil, charSwitchAddr = nil,
+    colorAddrs = {},
+    elapsed = 0, charElapsed = 0, colorRandomElapsed = 0, colorSameElapsed = 0,
+    lastItems = {},
+}
+
 function ensureMainThread()
-    if mainThreadRunning then return end
-    mainThreadRunning = true
-    local Thread = luajava.bindClass("java.lang.Thread")
-    local ok, proxy = pcall(function()
-        return luajava.createProxy("java.lang.Runnable", {
-            run = function()
-                local myX = findBssAddr(MY_X)
-                local myY = findBssAddr(MY_Y)
-                local myZ = findBssAddr(MY_Z)
-                local pAddr = {}
-                for i = 1, PLAYER_MAX do
-                    local base = PLAYER_BASE + (i - 1) * PLAYER_STRIDE
-                    pAddr[i] = { x = findBssAddr(base), y = findBssAddr(base + 4), z = findBssAddr(base + 8) }
-                end
-                local faceAddr = {}
-                for _, k in ipairs(FACE_ROTATE_KEYS) do
-                    for _, f in ipairs(FACE_FEATURES) do
-                        if f.key == k then faceAddr[k] = findBssAddr(f.offset); break end
-                    end
-                end
-                local charNameAddr   = findBssAddr(CHAR_NAME_OFFSET)
-                local charSwitchAddr = findBssAddr(CHAR_SWITCH_OFFSET)
-                local colorAddrs = {}
-                for _, off in ipairs(COLOR_OFFSETS) do
-                    local a = findBssAddr(off)
-                    if a then table.insert(colorAddrs, a) end
-                end
-                local elapsed = 0
-                local charElapsed = 0
-                local colorRandomElapsed = 0
-                local colorSameElapsed = 0
-                local lastItems = {}
-                while followRunning or hasAnyFaceRotating() or charLoopOn or colorRandomLoopOn or colorSameLoopOn do
-                    if followRunning and followTarget == 0 then
-                        if followKillMode then followTarget = findNextKillTarget(0)
-                        else followTarget = findNextActivePlayer(0) end
-                        if followTarget == 0 then gg.sleep(200); elapsed = 0 end
-                    end
-                    local writes = {}
-                    local newItems = {}
-                    if followRunning and followTarget > 0 and followTarget <= roomPlayerCount then
-                        local skipMove = false
-                        local currentDoubleWrite = false
-                        local currentDuration = 0
-                        local currentStepMs = 0
-                        if followKillMode then
-                            currentDoubleWrite = killLoopFollowDoubleWrite
-                            currentDuration = killLoopFollowDuration
-                            currentStepMs = killLoopFollowTickMs
-                        elseif loopFollowMode then
-                            currentDoubleWrite = loopFollowDoubleWrite
-                            currentDuration = loopFollowDuration
-                            currentStepMs = loopFollowTickMs
-                        else
-                            currentDoubleWrite = singleFollowDoubleWrite
-                            currentDuration = singleFollowDuration
-                            currentStepMs = singleFollowTickMs
-                        end
-                        if followKillMode then
-                            local hp = getKillTargetHP(followTarget)
-                            if hp == nil or hp <= 0 then
-                                if killLoopFollowMode then
-                                    local nextTarget = findNextKillTarget(followTarget)
-                                    if nextTarget == 0 then followTarget = 0
-                                    else followTarget = nextTarget end
-                                    elapsed = 0
-                                    skipMove = true
-                                end
-                            end
-                        end
-                        if not skipMove then
-                            local t = pAddr[followTarget]
-                            if t and t.x and t.y and t.z and myX and myY and myZ then
-                                local ok2, vals = pcall(gg.getValues, {
-                                    {address = t.x, flags = gg.TYPE_FLOAT},
-                                    {address = t.y, flags = gg.TYPE_FLOAT},
-                                    {address = t.z, flags = gg.TYPE_FLOAT},
-                                })
-                                if ok2 and vals and #vals >= 3 then
-                                    local px = tonumber(vals[1].value) or 0
-                                    local py = tonumber(vals[2].value) or 0
-                                    local pz = tonumber(vals[3].value) or 0
-                                    writes[#writes+1] = {address = myX, flags = gg.TYPE_FLOAT, value = px}
-                                    writes[#writes+1] = {address = myY, flags = gg.TYPE_FLOAT, value = py}
-                                    writes[#writes+1] = {address = myZ, flags = gg.TYPE_FLOAT, value = pz}
-                                    if currentDoubleWrite then
-                                        writes[#writes+1] = {address = myX, flags = gg.TYPE_FLOAT, value = px}
-                                        writes[#writes+1] = {address = myY, flags = gg.TYPE_FLOAT, value = py}
-                                        writes[#writes+1] = {address = myZ, flags = gg.TYPE_FLOAT, value = pz}
-                                    end
-                                end
-                            end
-                        end
-                        if loopFollowMode and not followKillMode then
-                            elapsed = elapsed + currentStepMs
-                            if elapsed >= currentDuration then
-                                elapsed = 0
-                                followTarget = findNextActivePlayer(followTarget)
-                            end
-                        end
-                    end
-                    for _, k in ipairs(FACE_ROTATE_KEYS) do
-                        local r = FACE_ROTATE[k]
-                        if r.on and faceAddr[k] then
-                            r.current = r.current + r.step
-                            if r.current > r.max then r.current = r.min end
-                            local wv = wrapWord(r.current)
-                            writes[#writes+1] = {address = faceAddr[k], flags = gg.TYPE_WORD, value = wv}
-                            newItems[#newItems+1] = {
-                                address = faceAddr[k], flags = gg.TYPE_WORD,
-                                value = wv, freeze = true, name = "face_rotate_" .. k }
-                        end
-                    end
-                    
-                    if charLoopOn and charNameAddr and charSwitchAddr then
-                        charElapsed = charElapsed + getCurrentSleepMs()
-                        if charElapsed >= charLoopTickMs then
-                            charElapsed = 0
-                            charLoopIndex = (charLoopIndex + 1) % 5
-                            writes[#writes+1] = {address = charNameAddr,   flags = gg.TYPE_DWORD, value = charLoopIndex}
-                            writes[#writes+1] = {address = charSwitchAddr, flags = gg.TYPE_BYTE,  value = charLoopIndex}
-                            if charLoopDoubleWrite then
-                                writes[#writes+1] = {address = charNameAddr,   flags = gg.TYPE_DWORD, value = charLoopIndex}
-                                writes[#writes+1] = {address = charSwitchAddr, flags = gg.TYPE_BYTE,  value = charLoopIndex}
-                            end
-                        end
-                    end
-                    
-                    if colorRandomLoopOn and #colorAddrs > 0 then
-                        colorRandomElapsed = colorRandomElapsed + getCurrentSleepMs()
-                        if colorRandomElapsed >= colorRandomTickMs then
-                            colorRandomElapsed = 0
-                            for _, a in ipairs(colorAddrs) do
-                                local v = math.random(0, 255)
-                                writes[#writes+1] = { address = a, flags = gg.TYPE_BYTE, value = v }
-                                if colorRandomDoubleWrite then
-                                    writes[#writes+1] = { address = a, flags = gg.TYPE_BYTE, value = v }
-                                end
-                            end
-                        end
-                    end
-                    
-                    if colorSameLoopOn and #colorAddrs > 0 then
-                        colorSameElapsed = colorSameElapsed + getCurrentSleepMs()
-                        if colorSameElapsed >= colorSameTickMs then
-                            colorSameElapsed = 0
-                            colorSameValue = math.random(0, 255)
-                            for _, a in ipairs(colorAddrs) do
-                                writes[#writes+1] = { address = a, flags = gg.TYPE_BYTE, value = colorSameValue }
-                                if colorSameDoubleWrite then
-                                    writes[#writes+1] = { address = a, flags = gg.TYPE_BYTE, value = colorSameValue }
-                                end
-                            end
-                        end
-                    end
-                    if #writes > 0 then pcall(gg.setValues, writes) end
-                    if #lastItems > 0 then pcall(gg.removeListItems, lastItems) end
-                    if #newItems > 0 then pcall(gg.addListItems, newItems) end
-                    lastItems = newItems
-                    gg.sleep(getCurrentSleepMs())
-                end
-                if #lastItems > 0 then pcall(gg.removeListItems, lastItems) end
-                mainThreadRunning = false
-            end
-        })
-    end)
-    if not ok then
-        mainThreadRunning = false
-        T("启动主线程失败：" .. tostring(proxy))
+    if _autoState.inited then return end
+    _autoState.inited = true
+    local s = _autoState
+    s.myX = findBssAddr(MY_X); s.myY = findBssAddr(MY_Y); s.myZ = findBssAddr(MY_Z)
+    for i = 1, PLAYER_MAX do
+        local base = PLAYER_BASE + (i - 1) * PLAYER_STRIDE
+        s.pAddr[i] = { x = findBssAddr(base), y = findBssAddr(base + 4), z = findBssAddr(base + 8) }
+    end
+    for _, k in ipairs(FACE_ROTATE_KEYS) do
+        for _, f in ipairs(FACE_FEATURES) do
+            if f.key == k then s.faceAddr[k] = findBssAddr(f.offset); break end
+        end
+    end
+    s.charNameAddr = findBssAddr(CHAR_NAME_OFFSET)
+    s.charSwitchAddr = findBssAddr(CHAR_SWITCH_OFFSET)
+    for _, off in ipairs(COLOR_OFFSETS) do
+        local a = findBssAddr(off)
+        if a then table.insert(s.colorAddrs, a) end
+    end
+end
+
+function runLoopOnce()
+    local s = _autoState
+    if not s.inited then return end
+    if not (followRunning or hasAnyFaceRotating() or charLoopOn or colorRandomLoopOn or colorSameLoopOn) then
         return
     end
-    local th = Thread(proxy)
-    th:start()
+
+    local myX, myY, myZ = s.myX, s.myY, s.myZ
+    local pAddr, faceAddr, colorAddrs = s.pAddr, s.faceAddr, s.colorAddrs
+    local charNameAddr, charSwitchAddr = s.charNameAddr, s.charSwitchAddr
+
+    if followRunning and followTarget == 0 then
+        if followKillMode then followTarget = findNextKillTarget(0)
+        else followTarget = findNextActivePlayer(0) end
+        if followTarget == 0 then s.elapsed = 0 end
+    end
+
+    local writes, newItems = {}, {}
+
+    if followRunning and followTarget > 0 and followTarget <= roomPlayerCount then
+        local skip, dW, dur, step = false, false, 0, 0
+        if followKillMode then
+            dW = killLoopFollowDoubleWrite; dur = killLoopFollowDuration; step = killLoopFollowTickMs
+        elseif loopFollowMode then
+            dW = loopFollowDoubleWrite; dur = loopFollowDuration; step = loopFollowTickMs
+        else
+            dW = singleFollowDoubleWrite; dur = singleFollowDuration; step = singleFollowTickMs
+        end
+        if followKillMode then
+            local hp = getKillTargetHP(followTarget)
+            if hp == nil or hp <= 0 then
+                if killLoopFollowMode then
+                    local nt = findNextKillTarget(followTarget)
+                    followTarget = nt == 0 and 0 or nt
+                    s.elapsed = 0; skip = true
+                end
+            end
+        end
+        if not skip then
+            local t = pAddr[followTarget]
+            if t and t.x and t.y and t.z and myX and myY and myZ then
+                local ok2, vals = pcall(gg.getValues, {
+                    {address = t.x, flags = gg.TYPE_FLOAT},
+                    {address = t.y, flags = gg.TYPE_FLOAT},
+                    {address = t.z, flags = gg.TYPE_FLOAT},
+                })
+                if ok2 and vals and #vals >= 3 then
+                    local px = tonumber(vals[1].value) or 0
+                    local py = tonumber(vals[2].value) or 0
+                    local pz = tonumber(vals[3].value) or 0
+                    writes[#writes+1] = {address = myX, flags = gg.TYPE_FLOAT, value = px}
+                    writes[#writes+1] = {address = myY, flags = gg.TYPE_FLOAT, value = py}
+                    writes[#writes+1] = {address = myZ, flags = gg.TYPE_FLOAT, value = pz}
+                    if dW then
+                        writes[#writes+1] = {address = myX, flags = gg.TYPE_FLOAT, value = px}
+                        writes[#writes+1] = {address = myY, flags = gg.TYPE_FLOAT, value = py}
+                        writes[#writes+1] = {address = myZ, flags = gg.TYPE_FLOAT, value = pz}
+                    end
+                end
+            end
+        end
+        if loopFollowMode and not followKillMode then
+            s.elapsed = s.elapsed + step
+            if s.elapsed >= dur then s.elapsed = 0; followTarget = findNextActivePlayer(followTarget) end
+        end
+    end
+
+    for _, k in ipairs(FACE_ROTATE_KEYS) do
+        local r = FACE_ROTATE[k]
+        if r.on and faceAddr[k] then
+            r.current = r.current + r.step
+            if r.current > r.max then r.current = r.min end
+            local wv = wrapWord(r.current)
+            writes[#writes+1] = {address = faceAddr[k], flags = gg.TYPE_WORD, value = wv}
+            newItems[#newItems+1] = {address = faceAddr[k], flags = gg.TYPE_WORD, value = wv, freeze = true, name = "face_rotate_" .. k }
+        end
+    end
+
+    if charLoopOn and charNameAddr and charSwitchAddr then
+        s.charElapsed = s.charElapsed + 30
+        if s.charElapsed >= charLoopTickMs then
+            s.charElapsed = 0
+            charLoopIndex = (charLoopIndex + 1) % 5
+            writes[#writes+1] = {address = charNameAddr,   flags = gg.TYPE_DWORD, value = charLoopIndex}
+            writes[#writes+1] = {address = charSwitchAddr, flags = gg.TYPE_BYTE,  value = charLoopIndex}
+            if charLoopDoubleWrite then
+                writes[#writes+1] = {address = charNameAddr,   flags = gg.TYPE_DWORD, value = charLoopIndex}
+                writes[#writes+1] = {address = charSwitchAddr, flags = gg.TYPE_BYTE,  value = charLoopIndex}
+            end
+        end
+    end
+
+    if colorRandomLoopOn and #colorAddrs > 0 then
+        s.colorRandomElapsed = s.colorRandomElapsed + 30
+        if s.colorRandomElapsed >= colorRandomTickMs then
+            s.colorRandomElapsed = 0
+            for _, a in ipairs(colorAddrs) do
+                local v = math.random(0, 255)
+                writes[#writes+1] = { address = a, flags = gg.TYPE_BYTE, value = v }
+                if colorRandomDoubleWrite then writes[#writes+1] = { address = a, flags = gg.TYPE_BYTE, value = v } end
+            end
+        end
+    end
+
+    if colorSameLoopOn and #colorAddrs > 0 then
+        s.colorSElapsed = s.colorSElapsed + 30
+        if s.colorSElapsed >= colorSameTickMs then
+            s.colorSElapsed = 0
+            colorSameValue = math.random(0, 255)
+            for _, a in ipairs(colorAddrs) do
+                writes[#writes+1] = { address = a, flags = gg.TYPE_BYTE, value = colorSameValue }
+                if colorSameDoubleWrite then writes[#writes+1] = { address = a, flags = gg.TYPE_BYTE, value = colorSameValue } end
+            end
+        end
+    end
+
+    if #writes > 0 then pcall(gg.setValues, writes) end
+    if #s.lastItems > 0 then pcall(gg.removeListItems, s.lastItems) end
+    if #newItems > 0 then pcall(gg.addListItems, newItems) end
+    s.lastItems = newItems
 end
 
 function startFollowThread()
@@ -1902,6 +1888,312 @@ function menuChar()
     end
 end
 
+MS_CAT_BASIC = {
+    {name="玩家索引", offset=0x62AD0, type=gg.TYPE_WORD},
+    {name="输入", offset=0x62AD2, type=gg.TYPE_WORD},
+    {name="金币", offset=0x62AD4, type=gg.TYPE_WORD},
+    {name="星星", offset=0x62AD6, type=gg.TYPE_WORD},
+    {name="生命", offset=0x62AD8, type=gg.TYPE_BYTE},
+    {name="钥匙", offset=0x62AD9, type=gg.TYPE_BYTE},
+    {name="血量", offset=0x62ADB, type=gg.TYPE_BYTE},
+    {name="受伤计数器", offset=0x62ADC, type=gg.TYPE_BYTE},
+    {name="治疗计数器", offset=0x62ADD, type=gg.TYPE_BYTE},
+    {name="打鼾", offset=0x62ADE, type=gg.TYPE_BYTE},
+    {name="冻结", offset=0x62ADF, type=gg.TYPE_BYTE},
+    {name="帽子", offset=0x62AE0, type=gg.TYPE_DWORD},
+    {name="帽子时间", offset=0x62AE4, type=gg.TYPE_WORD},
+    {name="无敌帧", offset=0x62AE6, type=gg.TYPE_WORD},
+    {name="挤压计时器", offset=0x62AE8, type=gg.TYPE_BYTE},
+    {name="击退计时器", offset=0x62AEA, type=gg.TYPE_BYTE},
+    {name="踢墙计时器", offset=0x62AEB, type=gg.TYPE_BYTE},
+    {name="二段跳计时器", offset=0x62AEC, type=gg.TYPE_BYTE},
+    {name="特殊三段跳", offset=0x62AED, type=gg.TYPE_BYTE},
+    {name="对物体可见", offset=0x62AEF, type=gg.TYPE_BYTE},
+    {name="对话ID", offset=0x62AF3, type=gg.TYPE_DWORD},
+    {name="对话所需星星", offset=0x62AF7, type=gg.TYPE_WORD},
+}
+MS_CAT_ACTION = {
+    {name="马里奥动作", offset=0x62AFC, type=gg.TYPE_DWORD},
+    {name="前一动作", offset=0x62B00, type=gg.TYPE_DWORD},
+    {name="动作参数", offset=0x62B04, type=gg.TYPE_DWORD},
+    {name="帧时间", offset=0x62B08, type=gg.TYPE_BYTE},
+    {name="帧状态", offset=0x62B0A, type=gg.TYPE_BYTE},
+    {name="帽子状态", offset=0x62B0C, type=gg.TYPE_BYTE},
+    {name="流沙深度", offset=0x62B10, type=gg.TYPE_FLOAT},
+    {name="控制器指针", offset=0x62B14, type=gg.TYPE_QWORD},
+    {name="身体状态指针", offset=0x62B18, type=gg.TYPE_QWORD},
+    {name="角色指针", offset=0x62B1C, type=gg.TYPE_QWORD},
+}
+MS_CAT_COORD = {
+    {name="坐标X", offset=0x62B34, type=gg.TYPE_FLOAT},
+    {name="坐标Y", offset=0x62B38, type=gg.TYPE_FLOAT},
+    {name="坐标Z", offset=0x62B3C, type=gg.TYPE_FLOAT},
+    {name="非瞬时传送X", offset=0x62B40, type=gg.TYPE_FLOAT},
+    {name="非瞬时传送Y", offset=0x62B44, type=gg.TYPE_FLOAT},
+    {name="非瞬时传送Z", offset=0x62B48, type=gg.TYPE_FLOAT},
+    {name="速度X", offset=0x62B4C, type=gg.TYPE_FLOAT},
+    {name="滑动速度", offset=0x62B50, type=gg.TYPE_FLOAT},
+    {name="滑动速度Z", offset=0x62B54, type=gg.TYPE_FLOAT},
+    {name="前进速度", offset=0x62B58, type=gg.TYPE_FLOAT},
+    {name="峰值高度", offset=0x62B5C, type=gg.TYPE_FLOAT},
+    {name="速度", offset=0x62B60, type=gg.TYPE_FLOAT},
+    {name="摔落高度", offset=0x62B64, type=gg.TYPE_FLOAT},
+}
+MS_CAT_ANGLE = {
+    {name="预期偏航角", offset=0x62B68, type=gg.TYPE_WORD},
+    {name="面朝方向", offset=0x62B6C, type=gg.TYPE_WORD},
+    {name="面朝方向2", offset=0x62B72, type=gg.TYPE_WORD},
+    {name="角速度X", offset=0x62B74, type=gg.TYPE_WORD},
+    {name="角速度Y", offset=0x62B76, type=gg.TYPE_WORD},
+    {name="角速度Z", offset=0x62B78, type=gg.TYPE_WORD},
+    {name="滑动偏航角", offset=0x62B7A, type=gg.TYPE_WORD},
+    {name="旋转偏航角", offset=0x62B7C, type=gg.TYPE_WORD},
+    {name="模型面朝", offset=0xA2C42, type=gg.TYPE_WORD},
+    {name="肢体面朝", offset=0xA2C48, type=gg.TYPE_WORD},
+}
+MS_CAT_PTR = {
+    {name="手持物体指针", offset=0x62B80, type=gg.TYPE_QWORD},
+    {name="被手持物体指针", offset=0x62B84, type=gg.TYPE_QWORD},
+    {name="交互物体指针", offset=0x62B88, type=gg.TYPE_QWORD},
+    {name="骑乘物体指针", offset=0x62B8C, type=gg.TYPE_QWORD},
+    {name="使用物体指针", offset=0x62B90, type=gg.TYPE_QWORD},
+    {name="马里奥物体指针", offset=0x62B94, type=gg.TYPE_QWORD},
+    {name="气泡物体指针", offset=0x62B98, type=gg.TYPE_QWORD},
+    {name="碰撞物体交互类型", offset=0x62B9C, type=gg.TYPE_DWORD},
+    {name="粒子标志", offset=0x62BA0, type=gg.TYPE_DWORD},
+    {name="动画指针", offset=0x62BA4, type=gg.TYPE_QWORD},
+    {name="墙壁指针", offset=0x62BB8, type=gg.TYPE_QWORD},
+    {name="天花板指针", offset=0x62BBC, type=gg.TYPE_QWORD},
+    {name="地面指针", offset=0x62BC0, type=gg.TYPE_QWORD},
+    {name="区域指针", offset=0x62BCC, type=gg.TYPE_QWORD},
+}
+MS_CAT_ENV = {
+    {name="天花板高度", offset=0x62BD4, type=gg.TYPE_FLOAT},
+    {name="地面高度", offset=0x62C14, type=gg.TYPE_FLOAT},
+    {name="墙壁法线X", offset=0x62BDC, type=gg.TYPE_FLOAT},
+    {name="墙壁法线Y", offset=0x62BE0, type=gg.TYPE_FLOAT},
+    {name="墙壁法线Z", offset=0x62BE4, type=gg.TYPE_FLOAT},
+    {name="地面角度", offset=0x62BEC, type=gg.TYPE_WORD},
+    {name="水面高度", offset=0x62C2A, type=gg.TYPE_WORD},
+    {name="当前房间", offset=0x62BF0, type=gg.TYPE_WORD},
+    {name="关卡编号", offset=0x49EDAD4, type=gg.TYPE_BYTE},
+    {name="关卡名字", offset=0x49EDAD2, type=gg.TYPE_BYTE},
+    {name="关卡退出界面", offset=0x60B42, type=gg.TYPE_BYTE},
+    {name="炸弹王生命", offset=0xAD0EC, type=gg.TYPE_DWORD},
+    {name="库巴生命", offset=0x69F6C, type=gg.TYPE_DWORD},
+    {name="全局加速", offset=0x497B0CC, type=gg.TYPE_FLOAT},
+    {name="区域(Var)", offset=0xA2CE0, type=gg.TYPE_BYTE},
+}
+MS_CAT_CONTROLLER = {
+    resolveBase = function()
+        local ms = findBssAddr(MARIO_STATE_OFFSET)
+        if not ms then return nil end
+        return readPointer(ms + 0x48)
+    end,
+    fields = {
+        {name="port", offset=0x00, type=gg.TYPE_DWORD},
+        {name="stickX", offset=0x04, type=gg.TYPE_FLOAT},
+        {name="stickY", offset=0x08, type=gg.TYPE_FLOAT},
+        {name="stickMag", offset=0x0C, type=gg.TYPE_FLOAT},
+        {name="rawStickX", offset=0x10, type=gg.TYPE_WORD},
+        {name="rawStickY", offset=0x12, type=gg.TYPE_WORD},
+        {name="extStickX", offset=0x14, type=gg.TYPE_WORD},
+        {name="extStickY", offset=0x16, type=gg.TYPE_WORD},
+        {name="buttonDown", offset=0x18, type=gg.TYPE_WORD},
+        {name="buttonPressed", offset=0x1A, type=gg.TYPE_WORD},
+        {name="buttonReleased", offset=0x1C, type=gg.TYPE_WORD},
+    }
+}
+MS_CAT_BODY_STATE = {
+    resolveBase = function()
+        local ms = findBssAddr(MARIO_STATE_OFFSET)
+        if not ms then return nil end
+        return readPointer(ms + 0x50)
+    end,
+    fields = {
+        {name="capState", offset=0x00, type=gg.TYPE_BYTE},
+        {name="eyeState", offset=0x01, type=gg.TYPE_BYTE},
+        {name="handState", offset=0x02, type=gg.TYPE_BYTE},
+        {name="punchState", offset=0x03, type=gg.TYPE_BYTE},
+        {name="modelState", offset=0x04, type=gg.TYPE_WORD},
+        {name="allowPartRotation", offset=0x06, type=gg.TYPE_BYTE},
+        {name="grabPos", offset=0x07, type=gg.TYPE_BYTE},
+        {name="wingFlutter", offset=0x08, type=gg.TYPE_BYTE},
+        {name="mirrorMario", offset=0x09, type=gg.TYPE_BYTE},
+        {name="headAngle.x", offset=0x0A, type=gg.TYPE_WORD},
+        {name="headAngle.y", offset=0x0C, type=gg.TYPE_WORD},
+        {name="headAngle.z", offset=0x0E, type=gg.TYPE_WORD},
+        {name="torsoAngle.x", offset=0x10, type=gg.TYPE_WORD},
+        {name="torsoAngle.y", offset=0x12, type=gg.TYPE_WORD},
+        {name="torsoAngle.z", offset=0x14, type=gg.TYPE_WORD},
+        {name="headPos.x", offset=0x18, type=gg.TYPE_FLOAT},
+        {name="headPos.y", offset=0x1C, type=gg.TYPE_FLOAT},
+        {name="headPos.z", offset=0x20, type=gg.TYPE_FLOAT},
+        {name="torsoPos.x", offset=0x24, type=gg.TYPE_FLOAT},
+        {name="torsoPos.y", offset=0x28, type=gg.TYPE_FLOAT},
+        {name="torsoPos.z", offset=0x2C, type=gg.TYPE_FLOAT},
+        {name="currAnimPart", offset=0x1B8, type=gg.TYPE_DWORD},
+        {name="action", offset=0x1C4, type=gg.TYPE_DWORD},
+        {name="shadeR", offset=0x1C8, type=gg.TYPE_WORD},
+        {name="shadeG", offset=0x1CA, type=gg.TYPE_WORD},
+        {name="shadeB", offset=0x1CC, type=gg.TYPE_WORD},
+        {name="lightR", offset=0x1CE, type=gg.TYPE_WORD},
+        {name="lightG", offset=0x1D0, type=gg.TYPE_WORD},
+        {name="lightB", offset=0x1D2, type=gg.TYPE_WORD},
+    }
+}
+MS_CAT_ANIMATION = {
+    resolveBase = function()
+        local ms = findBssAddr(MARIO_STATE_OFFSET)
+        if not ms then return nil end
+        local animPtr = readPointer(ms + 0xF0)
+        if not animPtr or animPtr == 0 then return nil end
+        return readPointer(animPtr + 0x10)
+    end,
+    fields = {
+        {name="flags", offset=0x00, type=gg.TYPE_WORD},
+        {name="animYTransDivisor", offset=0x02, type=gg.TYPE_WORD},
+        {name="startFrame", offset=0x04, type=gg.TYPE_WORD},
+        {name="loopStart", offset=0x06, type=gg.TYPE_WORD},
+        {name="loopEnd", offset=0x08, type=gg.TYPE_WORD},
+        {name="length", offset=0x20, type=gg.TYPE_DWORD},
+    }
+}
+MS_CAT_ANIM_INFO = {
+    resolveBase = function()
+        local ms = findBssAddr(MARIO_STATE_OFFSET)
+        if not ms then return nil end
+        local objPtr = readPointer(ms + 0xD8)
+        if not objPtr or objPtr == 0 then return nil end
+        return objPtr + 0x108
+    end,
+    fields = {
+        {name="animID", offset=0x10, type=gg.TYPE_WORD},
+        {name="prevAnimID", offset=0x12, type=gg.TYPE_WORD},
+        {name="animFrame", offset=0x14, type=gg.TYPE_WORD},
+        {name="prevAnimFrame", offset=0x16, type=gg.TYPE_WORD},
+        {name="animAccel", offset=0x20, type=gg.TYPE_DWORD},
+        {name="animTimer", offset=0x24, type=gg.TYPE_WORD},
+        {name="animYTrans", offset=0x26, type=gg.TYPE_WORD},
+    }
+}
+
+function editMSFieldAt(addr, f, catName)
+    local currentVal = readVal(addr, f.type)
+    local typeName = "?"
+    if f.type == gg.TYPE_BYTE then typeName = "BYTE"
+    elseif f.type == gg.TYPE_WORD then typeName = "WORD"
+    elseif f.type == gg.TYPE_DWORD then typeName = "DWORD"
+    elseif f.type == gg.TYPE_QWORD then typeName = "QWORD"
+    elseif f.type == gg.TYPE_FLOAT then typeName = "FLOAT" end
+    local lockName = "MS_" .. f.name
+    local res = gg.prompt(
+        {
+            string.format("[%s] %s", catName, f.name),
+            string.format("地址: 0x%X | 偏移: 0x%X | 类型: %s", addr, f.offset, typeName),
+            "锁定"
+        },
+        {tostring(currentVal), "", hasLock(lockName)},
+        {"text", "text", "checkbox"})
+    if not res then return end
+    if res[1] == nil or res[1] == "" then T("❌ 请输入数值"); return end
+    local val = parseNum(res[1])
+    if val == nil then T("❌ 数值无效"); return end
+    local freeze = res[3] == true
+    if f.type == gg.TYPE_BYTE then
+        val = math.floor(val) % 256
+    elseif f.type == gg.TYPE_WORD then
+        val = math.floor(val) % 65536
+        if val > 32767 then val = val - 65536 end
+    elseif f.type == gg.TYPE_DWORD then
+        val = math.floor(val) % 4294967296
+    elseif f.type == gg.TYPE_QWORD then
+        val = math.floor(val)
+    elseif f.type == gg.TYPE_FLOAT then
+        val = val + 0.0
+    end
+    clearLock(lockName)
+    writeVal(addr, f.type, val, freeze, lockName)
+    local after = readVal(addr, f.type)
+    T(string.format("✅ %s = %s%s", f.name, tostring(after), freeze and " 🔒" or ""))
+end
+
+function editMSField(f, catName)
+    local addr = findBssAddr(f.offset)
+    if not addr then T("❌ 找不到地址"); return end
+    editMSFieldAt(addr, f, catName)
+end
+
+function editMSFieldWithBase(f, catName, getBase)
+    local base = getBase()
+    if not base or base == 0 then T("❌ 指针链解析失败（游戏未启动？）"); return end
+    editMSFieldAt(base + f.offset, f, catName)
+end
+
+function clearMSLocks()
+    local rm = {}
+    for _, item in ipairs(gg.getListItems() or {}) do
+        local n = tostring(item.name or "")
+        if string.find(n, "^MS_") then table.insert(rm, item) end
+    end
+    if #rm > 0 then pcall(gg.removeListItems, rm); T("🧹 已清理 " .. #rm .. " 个 MS 锁定")
+    else T("✅ 没有 MS 锁定") end
+end
+
+function openMSCategory(catName, cat)
+    local fields = cat
+    local getBase = nil
+    if type(cat) == "table" and cat.resolveBase then
+        fields = cat.fields or {}
+        getBase = cat.resolveBase
+    end
+    while true do
+        local choices = {}
+        for _, f in ipairs(fields) do
+            choices[#choices+1] = string.format("🔸 %s (0x%X)", f.name, f.offset)
+        end
+        choices[#choices+1] = "🧹 清理所有 MS 锁定"
+        choices[#choices+1] = L("back")
+        local cleanIdx = #choices - 1
+        local backIdx = #choices
+        local res = gg.choice(choices, nil, "🧬 " .. catName)
+        if res == nil or res == backIdx then return end
+        if res == cleanIdx then clearMSLocks()
+        else
+            local f = fields[res]
+            if f then
+                if getBase then editMSFieldWithBase(f, catName, getBase)
+                else editMSField(f, catName) end
+            end
+        end
+    end
+end
+
+function menuMarioState()
+    while true do
+        local cats = {
+            {"基础状态",   MS_CAT_BASIC},
+            {"动作与状态", MS_CAT_ACTION},
+            {"坐标与速度", MS_CAT_COORD},
+            {"角度与朝向", MS_CAT_ANGLE},
+            {"指针与对象", MS_CAT_PTR},
+            {"环境与高度", MS_CAT_ENV},
+            {"控制器",     MS_CAT_CONTROLLER},
+            {"身体状态",   MS_CAT_BODY_STATE},
+            {"动画数据",   MS_CAT_ANIMATION},
+            {"动画状态",   MS_CAT_ANIM_INFO},
+        }
+        local choices = {}
+        for _, c in ipairs(cats) do choices[#choices+1] = "🔸 " .. c[1] end
+        choices[#choices+1] = L("back")
+        local backIdx = #choices
+        local res = gg.choice(choices, nil, "🧬 MARIOSTATE 高级数据")
+        if res == nil or res == backIdx then return end
+        local pick = cats[res]
+        if pick then openMSCategory(pick[1], pick[2]) end
+    end
+end
+
 function menuLanguage()
     while true do
         local res = gg.choice({
@@ -1945,12 +2237,13 @@ function mainMenu()
             L("quick"),
             L("face"),
             L("char"),
+            "🧬 MARIOSTATE 高级数据",
             "language",
             L("exit_script")
         }, nil, L("main_title") .. " | " .. timeStr())
 
         if res == nil then return end
-        if res == 12 then printExitInfo(); os.exit() end
+        if res == 13 then printExitInfo(); os.exit() end
 
         if res == 1 then menuMonitor()
         elseif res == 2 then menuCustom()
@@ -1962,12 +2255,15 @@ function mainMenu()
         elseif res == 8 then menuQuick()
         elseif res == 9 then menuFace()
         elseif res == 10 then menuChar()
-        elseif res == 11 then menuLanguage() end
+        elseif res == 11 then menuMarioState()
+        elseif res == 12 then menuLanguage() end
     end
 end
 
 XGCK = -1
 while true do
+    pcall(runLoopOnce)
+
     if gg.isVisible(true) then
         XGCK = 1
         gg.setVisible(false)
@@ -1977,7 +2273,5 @@ while true do
         mainMenu()
         XGCK = -1
     end
-    gg.sleep(100)
+    gg.sleep(50)
 end
-
-return function() end
