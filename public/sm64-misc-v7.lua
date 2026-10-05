@@ -52,3 +52,10 @@
 无敌帧|6f5a6fcae6|2|5b|1|0|0|0|rw-p|/data/app/~~LPLI-KpMHx2HnGpY4NNuVQ==/com.shangshanruo666.sm64coopdxcnsv-LeJZmvdTr7MoYz5UKgZkpw==/base.apk:bss|62ae6
 26974
 帽子时间|6f5a6fcae4|20|f083|1|0|0|0|rw-p|/data/app/~~LPLI-KpMHx2HnGpY4NNuVQ==/com.shangshanruo666.sm64coopdxcnsv-LeJZmvdTr7MoYz5UKgZkpw==/base.apk:bss|62ae4
+18090
+玩家名字1|6f5efc81ac|2|73|0|0|0|0|rw-p|/data/app/~~LPLI-KpMHx2HnGpY4NNuVQ==/com.shangshanruo666.sm64coopdxcnsv-LeJZmvdTr7MoYz5UKgZkpw==/base.apk:bss|496b1ac
+玩家名字2|6f5f04ab00|2|73|0|0|0|0|rw-p|/data/app/~~LPLI-KpMHx2HnGpY4NNuVQ==/com.shangshanruo666.sm64coopdxcnsv-LeJZmvdTr7MoYz5UKgZkpw==/base.apk:bss|49edb00
+31970
+角色切换|73b18cac58|1|2|0|0|0|0|rw-p|/data/app/~~LPLI-KpMHx2HnGpY4NNuVQ==/com.shangshanruo666.sm64coopdxcnsv-LeJZmvdTr7MoYz5UKgZkpw==/base.apk:bss|49edc58
+31970
+角色名字|73b18481ec|4|23da|0|0|0|0|rw-p|/data/app/~~LPLI-KpMHx2HnGpY4NNuVQ==/com.shangshanruo666.sm64coopdxcnsv-LeJZmvdTr7MoYz5UKgZkpw==/base.apk:bss|496b1ec
