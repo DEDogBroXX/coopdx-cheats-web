@@ -3,7 +3,6 @@
 --  >= 0x04000000
 --  <= 0x08000000
 
-
 print(compose)
 components = compose.components
 
@@ -490,6 +489,8 @@ marioState = {
     lives = nil, health = nil, action = nil, speed = nil,
     slideSpeed = nil,
     facingDirection = nil, facingDirection2 = nil,
+    playerName1 = nil, playerName2 = nil,
+    charName = nil, charSwitch = nil,
     status = nil
 }
 
@@ -503,6 +504,13 @@ function startMarioMonitor()
 
         local OFFSET_FACING  = 0x62B6C
         local OFFSET_FACING2 = 0x62B72
+
+        local OFFSET_NAME1 = 0x496B1AC
+        local OFFSET_NAME2 = 0x49EDB00
+
+        local OFFSET_CHAR_NAME   = 0x496B1EC
+        local OFFSET_CHAR_SWITCH = 0x49EDC58
+
         local TYPE_BYTE, TYPE_WORD, TYPE_DWORD, TYPE_FLOAT =
             gg.TYPE_BYTE, gg.TYPE_WORD, gg.TYPE_DWORD, gg.TYPE_FLOAT
 
@@ -513,6 +521,12 @@ function startMarioMonitor()
         local SLIDE_ADDR        = getBssAddress(OFFSET_SLIDE)
         local FACING_ADDR       = getBssAddress(OFFSET_FACING)
         local FACING2_ADDR      = getBssAddress(OFFSET_FACING2)
+
+        local NAME1_ADDR        = getBssAddress(OFFSET_NAME1)
+        local NAME2_ADDR        = getBssAddress(OFFSET_NAME2)
+
+        local CHAR_NAME_ADDR    = getBssAddress(OFFSET_CHAR_NAME)
+        local CHAR_SWITCH_ADDR  = getBssAddress(OFFSET_CHAR_SWITCH)
 
         if not LIVES_ADDR or not HEALTH_ADDR or not ACTION_ADDR then
             marioState.status.set("未找到匹配的 bss 段或偏移量错误")
@@ -569,6 +583,44 @@ function startMarioMonitor()
                 marioState.facingDirection2.set("面朝方向2：地址未找到")
             end
 
+            if NAME1_ADDR then
+                local nv = gg.getValues({{address = NAME1_ADDR, flags = TYPE_WORD}})
+                if nv and #nv >= 1 then
+                    marioState.playerName1.set(string.format("玩家名字1：%d", tonumber(nv[1].value) or 0))
+                end
+            else
+                marioState.playerName1.set("玩家名字1：地址未找到")
+            end
+
+            if NAME2_ADDR then
+                local nv = gg.getValues({{address = NAME2_ADDR, flags = TYPE_WORD}})
+                if nv and #nv >= 1 then
+                    marioState.playerName2.set(string.format("玩家名字2：%d", tonumber(nv[1].value) or 0))
+                end
+            else
+                marioState.playerName2.set("玩家名字2：地址未找到")
+            end
+
+            if CHAR_NAME_ADDR then
+                local cv = gg.getValues({{address = CHAR_NAME_ADDR, flags = TYPE_DWORD}})
+                if cv and #cv >= 1 then
+                    local v = tonumber(cv[1].value) or 0
+                    marioState.charName.set(string.format("角色名字：%d (0x%X)", v, v))
+                end
+            else
+                marioState.charName.set("角色名字：地址未找到")
+            end
+
+            if CHAR_SWITCH_ADDR then
+                local cv = gg.getValues({{address = CHAR_SWITCH_ADDR, flags = TYPE_BYTE}})
+                if cv and #cv >= 1 then
+                    local v = tonumber(cv[1].value) or 0
+                    marioState.charSwitch.set(string.format("角色切换：%d (0x%X)", v, v))
+                end
+            else
+                marioState.charSwitch.set("角色切换：地址未找到")
+            end
+
             gg.sleep(0)
         end
     end)
@@ -612,6 +664,17 @@ function marioLayout(scope)
                     components.Text({ text = marioState.facingDirection,  color = compose.Color(0xFF3F51B5), fontSize = compose.TextUnit(11) })
                     components.Text({ text = marioState.facingDirection2, color = compose.Color(0xFF673AB7), fontSize = compose.TextUnit(11) })
                 end)
+                components.Spacer({ modifier = Modifier.height(2) })
+
+                components.Row({ horizontalArrangement = compose.spacedBy(12) }, function(s)
+                    components.Text({ text = marioState.playerName1, color = compose.Color(0xFFFFA726), fontSize = compose.TextUnit(11) })
+                    components.Text({ text = marioState.playerName2, color = compose.Color(0xFFFF7043), fontSize = compose.TextUnit(11) })
+                end)
+                components.Spacer({ modifier = Modifier.height(2) })
+
+                components.Text({ text = marioState.charName,   color = compose.Color(0xFFE91E63), fontSize = compose.TextUnit(11) })
+                components.Spacer({ modifier = Modifier.height(2) })
+                components.Text({ text = marioState.charSwitch, color = compose.Color(0xFF8E24AA), fontSize = compose.TextUnit(11) })
             end)
             components.Spacer({ modifier = Modifier.height(4) })
             components.Button({
@@ -760,7 +823,8 @@ function levelLayout(scope)
     end)
 end
 
-environmentState = { waterLevel = nil, groundHeight = nil, fallHeight = nil, status = nil }
+environmentState = { waterLevel = nil, groundHeight = nil, fallHeight = nil,
+                     groundType1 = nil, groundType2 = nil, status = nil }
 
 function startEnvironmentMonitor()
     if not appScope then return end
@@ -771,6 +835,13 @@ function startEnvironmentMonitor()
         local WATER_ADDR  = getBssAddress(OFFSET_WATER)
         local GROUND_ADDR = getBssAddress(OFFSET_GROUND)
         local FALL_ADDR   = getBssAddress(OFFSET_FALL)
+
+        local OFFSET_GROUND_TYPE1 = 0x60C84
+        local OFFSET_GROUND_TYPE2 = 0x60CA4
+        local TYPE_DWORD = gg.TYPE_DWORD
+        local GROUND_TYPE1_ADDR = getBssAddress(OFFSET_GROUND_TYPE1)
+        local GROUND_TYPE2_ADDR = getBssAddress(OFFSET_GROUND_TYPE2)
+
         if not WATER_ADDR or not GROUND_ADDR or not FALL_ADDR then
             environmentState.status.set("未找到匹配的 bss 段或偏移量错误")
             MonitorManager.stop("environment")
@@ -794,6 +865,27 @@ function startEnvironmentMonitor()
                 MonitorManager.stop("environment")
                 break
             end
+
+            if GROUND_TYPE1_ADDR then
+                local gt = gg.getValues({{address = GROUND_TYPE1_ADDR, flags = TYPE_DWORD}})
+                if gt and #gt >= 1 then
+                    local v = tonumber(gt[1].value) or 0
+                    environmentState.groundType1.set(string.format("地面类型1：%d (0x%X)", v, v))
+                end
+            else
+                environmentState.groundType1.set("地面类型1：地址未找到")
+            end
+
+            if GROUND_TYPE2_ADDR then
+                local gt = gg.getValues({{address = GROUND_TYPE2_ADDR, flags = TYPE_DWORD}})
+                if gt and #gt >= 1 then
+                    local v = tonumber(gt[1].value) or 0
+                    environmentState.groundType2.set(string.format("地面类型2：%d (0x%X)", v, v))
+                end
+            else
+                environmentState.groundType2.set("地面类型2：地址未找到")
+            end
+
             gg.sleep(0)
         end
     end)
@@ -825,6 +917,10 @@ function environmentLayout(scope)
                 components.Text({ text = environmentState.groundHeight, color = compose.Color(0xFF795548), fontSize = compose.TextUnit(11) })
                 components.Spacer({ modifier = Modifier.height(2) })
                 components.Text({ text = environmentState.fallHeight,   color = compose.Color(0xFFE91E63), fontSize = compose.TextUnit(11) })
+                components.Spacer({ modifier = Modifier.height(2) })
+                components.Text({ text = environmentState.groundType1, color = compose.Color(0xFF8BC34A), fontSize = compose.TextUnit(11) })
+                components.Spacer({ modifier = Modifier.height(2) })
+                components.Text({ text = environmentState.groundType2, color = compose.Color(0xFF4CAF50), fontSize = compose.TextUnit(11) })
             end)
             components.Spacer({ modifier = Modifier.height(4) })
             components.Button({
@@ -1079,6 +1175,11 @@ function initAllMonitorStates(scope)
 
         marioState.facingDirection  = scope.state("面朝方向：0")
         marioState.facingDirection2 = scope.state("面朝方向2：0")
+        marioState.playerName1      = scope.state("玩家名字1：0")
+        marioState.playerName2      = scope.state("玩家名字2：0")
+        
+        marioState.charName         = scope.state("角色名字：0")
+        marioState.charSwitch       = scope.state("角色切换：0")
         marioState.status          = scope.state("点击下方按钮启动监控")
     end
     if not levelState.levelId then
@@ -1094,6 +1195,8 @@ function initAllMonitorStates(scope)
         environmentState.waterLevel   = scope.state("水面高度：0")
         environmentState.groundHeight = scope.state("地面高度：0")
         environmentState.fallHeight   = scope.state("摔落高度：0")
+        environmentState.groundType1  = scope.state("地面类型1：0")
+        environmentState.groundType2  = scope.state("地面类型2：0")
         environmentState.status       = scope.state("点击下方按钮启动监控")
     end
     if not enemyState.kingBobomb then
