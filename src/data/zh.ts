@@ -8,6 +8,7 @@ export const content: Content = {
   },
   hero: {
     title: 'sm64coopdx Lua 脚本外挂',
+    demoVideo: "demo.mp4",
     subtitle:
       'AGG / GG 修改器专用 Lua 脚本，悬浮窗菜单，弹窗一键开关。快乐便捷草飞老外。',
   },
@@ -82,7 +83,24 @@ export const content: Content = {
     subtitle: '游戏内实际效果展示。截图持续补充中。',
     empty: '目前还没有截图',
     backHome: '返回首页',
-    screenshots: [],
+    screenshots: [
+      {
+        src: "main.jpg",
+        title: "主脚本界面"
+      },
+      {
+        src: "Screenshot_20261006_134753.jpg",
+        title: "弹窗版本"
+      },
+      {
+        src: "Screenshot_20261006_134854.jpg",
+        title: "数据监控"
+      },
+      {
+        src: "new_compoents.jpg",
+        title: "Lua Component 版本 （新版）"
+      }
+    ],
   },
   footer: 'sm64coopdx Lua 脚本外挂 · 个人项目',
   scripts: [
@@ -147,7 +165,7 @@ export const content: Content = {
       name: '狗哥又玩又爱玩',
       role: ' (主要 Lua 开发)',
       bio: 'sm64coopdx 玩家，国内被 coopnet 封禁第一人',
-      avatar: '/dogbro.jpg',
+      avatar: '/coopdx-cheats-web/dogbro.jpg',
       links: [
         { label: 'B站', url: '#' },
         { label: 'GitHub', url: '#' },
@@ -157,7 +175,7 @@ export const content: Content = {
       name: 'toadXtech64',
       role: ' (辅助 / Derect Client 开发)',
       bio: '比狗哥收敛点，最早脚本的框架构成',
-      avatar: '/toad.jpg',
+      avatar: '/coopdx-cheats-web/toad.jpg',
       links: [
         { label: 'B站', url: '#' },
         { label: 'Discord', url: '#' },

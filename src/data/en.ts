@@ -9,6 +9,7 @@ export const content: Content = {
   },
   hero: {
     title: 'sm64coopdx Lua Scripts',
+    demoVideo: "../demo.mp4",
     subtitle:
       'Lua scripts for AGG / GG. Floating window menu, one-tap toggles. Have fun.',
   },
@@ -83,7 +84,24 @@ export const content: Content = {
     subtitle: 'Actual in-game effects. More screenshots coming soon.',
     empty: 'No screenshots yet',
     backHome: 'Back to home',
-    screenshots: [],
+    screenshots: [
+      {
+        src: "../main.jpg",
+        title: "Main Script UI"
+      },
+      {
+        src: "../Screenshot_20261006_134753.jpg",
+        title: "Dialog Version"
+      },
+      {
+        src: "../Screenshot_20261006_134854.jpg",
+        title: "Data Monitor"
+      },
+      {
+        src: "../new_compoents.jpg",
+        title: "Lua Component (New Version)"
+      }
+    ],
   },
   footer: 'sm64coopdx Lua Scripts · Personal project',
   scripts: [
@@ -152,7 +170,7 @@ export const content: Content = {
       name: '狗哥又玩又爱玩',
       role: ' (Main Lua developer)',
       bio: 'sm64coopdx player. First person banned from coopnet in China.',
-      avatar: '/dogbro.jpg',
+      avatar: '/coopdx-cheats-web/dogbro.jpg',
       links: [
         { label: 'Bilibili', url: '#' },
         { label: 'GitHub', url: '#' },
@@ -162,7 +180,7 @@ export const content: Content = {
       name: 'toadXtech64',
       role: ' (Helper / Derect Client developer)',
       bio: 'More reserved than DogBro. Built the earliest script framework.',
-      avatar: '/toad.jpg',
+      avatar: '/coopdx-cheats-web/toad.jpg',
       links: [
         { label: 'Bilibili', url: '#' },
         { label: 'Discord', url: '#' },

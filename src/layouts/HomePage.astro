@@ -17,6 +17,8 @@ const otherLangs = allLangs.filter((l) => l !== lang);
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const downloadHref = (url: string) => encodeURI(`${base}${url}`);
+
+const withBase = (p: string) => p.startsWith('http') ? p : `${base}${p}`;
 ---
 
 <!doctype html>
@@ -56,6 +58,7 @@ const downloadHref = (url: string) => encodeURI(`${base}${url}`);
 
     <!-- 脚本区块 -->
     <main>
+      <center><video src={c.hero.demoVideo} width="500" autoplay loop style="margin-bottom: 10px;"/></center>
       {
         c.scripts.map((script) => (
           <section class="script-section" id={script.id}>
@@ -136,7 +139,7 @@ const downloadHref = (url: string) => encodeURI(`${base}${url}`);
           c.authors.map((a) => (
             <div class="author-card">
               {a.avatar && (
-                <img src={a.avatar} alt={a.name} class="author-avatar" />
+                <img src={withBase(a.avatar)} alt={a.name} class="author-avatar" />
               )}
               <div class="author-info">
                 <h3>

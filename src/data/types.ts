@@ -55,6 +55,7 @@ export interface Content {
   hero: {
     title: string;
     subtitle: string;
+    demoVideo?: string;
   };
   nav: {
     howto: string;

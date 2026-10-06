@@ -152,7 +152,7 @@ export const content: Partial<Content> = {
       name: '狗哥又玩又爱玩',
       role: ' (메인 Lua 개발자)',
       bio: 'sm64coopdx 플레이어. 중국에서 coopnet에서 밴된 첫 번째 사람.',
-      avatar: '/dogbro.jpg',
+      avatar: '/coopdx-cheats-web/dogbro.jpg',
       links: [
         { label: 'Bilibili', url: '#' },
         { label: 'GitHub', url: '#' },
@@ -162,7 +162,7 @@ export const content: Partial<Content> = {
       name: 'toadXtech64',
       role: ' (보조 / Derect Client 개발자)',
       bio: 'DogBro보다 차분함. 초기 스크립트 프레임워크를 구축.',
-      avatar: '/toad.jpg',
+      avatar: '/coopdx-cheats-web/toad.jpg',
       links: [
         { label: 'Bilibili', url: '#' },
         { label: 'Discord', url: '#' },
