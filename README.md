@@ -80,10 +80,10 @@ Feel free to check [our documentation](https://docs.astro.build) or jump into ou
 *游戏内功能界面 3*
 
 游戏演示：
-[点击观看/下载视频演示](https://dedogbroxx.github.io/sm64coopdx-cheats/Screenrecording_20261006_153401.mp4)
+[点击观看/下载视频演示](https://dedogbroxx.github.io/coopdx-cheats-web/Screenrecording_20261006_153401.mp4)
 
 Game demonstration:
-[Click to watch/download video demonstration](https://dedogbroxx.github.io/sm64coopdx-cheats/Screenrecording_20261006_153401.mp4)
+[Click to watch/download video demonstration](https://dedogbroxx.github.io/coopdx-cheats-web/Screenrecording_20261006_153401.mp4)
 
 GameGuardian下载
 
