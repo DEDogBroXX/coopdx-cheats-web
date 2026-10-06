@@ -67,3 +67,15 @@ Feel free to check [our documentation](https://docs.astro.build) or jump into ou
 ### 5. AGG 主菜单 - 角色与高级数据 (AGG Menu 3)
 ![AGG Menu 3](https://dedogbroxx.github.io/coopdx-cheats-web/Screenshot_20261006_134854.jpg)
 *AGG 主菜单：朝向、角色、高级数据与语言设置*
+
+### 6. 游戏功能界面 1 (Game Feature UI 1)
+![Game UI 1](https://dedogbroxx.github.io/coopdx-cheats-web/Screenshot_20261006_135730.jpg)
+*游戏内功能界面 1*
+
+### 7. 游戏功能界面 2 (Game Feature UI 2)
+![Game UI 2](https://dedogbroxx.github.io/coopdx-cheats-web/Screenshot_20261006_135803.jpg)
+*游戏内功能界面 2*
+
+### 8. 游戏功能界面 3 (Game Feature UI 3)
+![Game UI 3](https://dedogbroxx.github.io/coopdx-cheats-web/Screenshot_20261006_135806.jpg)
+*游戏内功能界面 3*
