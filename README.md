@@ -45,3 +45,25 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+## 游戏画面展示 (Game Screenshots)
+
+### 1. 数据监控面板 (Data Monitor Panel)
+![Data Monitor](https://dedogbroxx.github.io/coopdx-cheats-web/Screenshot_20261006_134759.jpg)
+*SM64 CoopDX 数据监控面板*
+
+### 2. 基础状态与功能菜单 (Helper Menu)
+![Helper Menu](https://dedogbroxx.github.io/coopdx-cheats-web/Screenshot_20261006_134756.jpg)
+*辅助菜单：基础状态与动作选项*
+
+### 3. AGG 主菜单 - 监控与设置 (AGG Menu 1)
+![AGG Menu 1](https://dedogbroxx.github.io/coopdx-cheats-web/Screenshot_20261006_134753.jpg)
+*AGG 主菜单：监控、自定义编辑与帽子状态*
+
+### 4. AGG 主菜单 - 实用工具 (AGG Menu 2)
+![AGG Menu 2](https://dedogbroxx.github.io/coopdx-cheats-web/Screenshot_20261006_134633.jpg)
+*AGG 主菜单：坐标修复、退出界面、击杀光环与快速打开*
+
+### 5. AGG 主菜单 - 角色与高级数据 (AGG Menu 3)
+![AGG Menu 3](https://dedogbroxx.github.io/coopdx-cheats-web/Screenshot_20261006_134854.jpg)
+*AGG 主菜单：朝向、角色、高级数据与语言设置*
