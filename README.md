@@ -79,11 +79,9 @@ Feel free to check [our documentation](https://docs.astro.build) or jump into ou
 ![Game UI 3](https://dedogbroxx.github.io/coopdx-cheats-web/Screenshot_20261006_135806.jpg)
 *游戏内功能界面 3*
 
-游戏演示：
-[点击观看/下载视频演示](https://dedogbroxx.github.io/sm64coopdx-cheats/Screenrecording_20261006_153401.mp4)
-
-Game demonstration:
-[Click to watch/download video demonstration](https://dedogbroxx.github.io/sm64coopdx-cheats/Screenrecording_20261006_153401.mp4)
+<!-- 游戏演示 -->
+<h3>游戏演示 / Game demonstration</h3>
+<video src="/Screenrecording_20261006_153401.mp4" controls width="100%" style="max-width: 600px; border-radius: 8px;"></video>
 
 GameGuardian下载
 
