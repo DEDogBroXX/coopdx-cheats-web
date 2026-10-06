@@ -79,3 +79,30 @@ Feel free to check [our documentation](https://docs.astro.build) or jump into ou
 ### 8. 游戏功能界面 3 (Game Feature UI 3)
 ![Game UI 3](https://dedogbroxx.github.io/coopdx-cheats-web/Screenshot_20261006_135806.jpg)
 *游戏内功能界面 3*
+
+GameGuardian下载
+
+RLGG悬浮窗是需要付费的，其他都是免费的。
+
+你需要GameGuardian来运行脚本，GameGuardian链接：https://gameguardian.net/forum/
+图片：![GameGuardian](https://github.com/DEDogBroXX/coopdx-cheats-web/raw/master/public/8f3163c3ae2ac136f8476703b98287ac9dcc1c8093a877a8ebfb800d768adaa7.0.WEBP)
+
+RLGameGuardian链接：https://gitee.com/rlyun/rlgg
+
+AGameGuardian链接：https://m.bilibili.com/
+图片：![AGameGuardian](https://github.com/DEDogBroXX/coopdx-cheats-web/raw/master/public/IMG_20261006_140612.jpg)
+
+我们的b站账号：https://m.bilibili.com/space/3494381151586530?from=search ＆ https://m.bilibili.com/space?from=headline
+
+GameGuardian Link
+The RLGG floating window is a paid feature, everything else is free.
+
+You need GameGuardian to run the scripts. GameGuardian link: https://gameguardian.net/forum/
+Image: ![GameGuardian](https://github.com/DEDogBroXX/coopdx-cheats-web/raw/master/public/8f3163c3ae2ac136f8476703b98287ac9dcc1c8093a877a8ebfb800d768adaa7.0.WEBP)
+
+RLGameGuardian link: https://gitee.com/rlyun/rlgg
+
+AGameGuardian link: https://m.bilibili.com/
+Image: ![AGameGuardian](https://github.com/DEDogBroXX/coopdx-cheats-web/raw/master/public/IMG_20261006_140612.jpg)
+
+Our Bilibili accounts: https://m.bilibili.com/space/3494381151586530?from=search & https://m.bilibili.com/space?from=headline
