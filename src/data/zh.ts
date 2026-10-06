@@ -8,7 +8,7 @@ export const content: Content = {
   },
   hero: {
     title: 'sm64coopdx Lua 脚本外挂',
-    demoVideo: "demo.mp4",
+    demoVideo: "/demo.mp4",
     subtitle:
       'AGG / GG 修改器专用 Lua 脚本，悬浮窗菜单，弹窗一键开关。快乐便捷草飞老外。',
   },
@@ -165,7 +165,7 @@ export const content: Content = {
       name: '狗哥又玩又爱玩',
       role: ' (主要 Lua 开发)',
       bio: 'sm64coopdx 玩家，国内被 coopnet 封禁第一人',
-      avatar: '/coopdx-cheats-web/dogbro.jpg',
+      avatar: '/dogbro.jpg',
       links: [
         { label: 'B站', url: '#' },
         { label: 'GitHub', url: '#' },
@@ -175,7 +175,7 @@ export const content: Content = {
       name: 'toadXtech64',
       role: ' (辅助 / Derect Client 开发)',
       bio: '比狗哥收敛点，最早脚本的框架构成',
-      avatar: '/coopdx-cheats-web/toad.jpg',
+      avatar: '/toad.jpg',
       links: [
         { label: 'B站', url: '#' },
         { label: 'Discord', url: '#' },
