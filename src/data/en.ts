@@ -170,7 +170,7 @@ export const content: Content = {
       name: '狗哥又玩又爱玩',
       role: ' (Main Lua developer)',
       bio: 'sm64coopdx player. First person banned from coopnet in China.',
-      avatar: '/coopdx-cheats-web/dogbro.jpg',
+      avatar: '/dogbro.jpg',
       links: [
         { label: 'Bilibili', url: '#' },
         { label: 'GitHub', url: '#' },
@@ -180,7 +180,7 @@ export const content: Content = {
       name: 'toadXtech64',
       role: ' (Helper / Derect Client developer)',
       bio: 'More reserved than DogBro. Built the earliest script framework.',
-      avatar: '/coopdx-cheats-web/toad.jpg',
+      avatar: '/toad.jpg',
       links: [
         { label: 'Bilibili', url: '#' },
         { label: 'Discord', url: '#' },
