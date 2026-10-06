@@ -9,7 +9,7 @@ export const content: Content = {
   },
   hero: {
     title: 'sm64coopdx Lua Scripts',
-    demoVideo: "../demo.mp4",
+    demoVideo: "/demo.mp4",
     subtitle:
       'Lua scripts for AGG / GG. Floating window menu, one-tap toggles. Have fun.',
   },
@@ -86,19 +86,19 @@ export const content: Content = {
     backHome: 'Back to home',
     screenshots: [
       {
-        src: "../main.jpg",
+        src: "/main.jpg",
         title: "Main Script UI"
       },
       {
-        src: "../Screenshot_20261006_134753.jpg",
+        src: "/Screenshot_20261006_134753.jpg",
         title: "Dialog Version"
       },
       {
-        src: "../Screenshot_20261006_134854.jpg",
+        src: "/Screenshot_20261006_134854.jpg",
         title: "Data Monitor"
       },
       {
-        src: "../new_compoents.jpg",
+        src: "/new_compoents.jpg",
         title: "Lua Component (New Version)"
       }
     ],

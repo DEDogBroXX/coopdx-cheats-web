@@ -12,6 +12,9 @@ const { lang } = Astro.props;
 const c: Content = languages[lang].content;
 const htmlLang = languages[lang].htmlLang;
 const homeHref = pathFor(lang);
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const withBase = (p: string) => p.startsWith('https') ? p : `${base}${p}`;
 ---
 
 <!doctype html>
@@ -55,7 +58,7 @@ const homeHref = pathFor(lang);
         <div class="shot-grid">
           {c.gallery.screenshots.map((s) => (
             <figure class="shot-card">
-              <img src={s.src} alt={s.title} loading="lazy" />
+              <img src={withBase(s.src)} alt={s.title} loading="lazy" />
               <figcaption>
                 <strong>{s.title}</strong>
                 {s.description && <span>{s.description}</span>}
